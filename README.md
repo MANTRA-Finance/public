@@ -97,18 +97,18 @@
 11. Create Validator
 	- Run the following command:
 
-	```
-	mantrachaind tx staking create-validator \
-	--amount=1000000uatom \
-	--pubkey=$(mantrachaind tendermint show-validator) \
-	--moniker="<your-moniker>" \
-	--chain-id="mantrachain-1" \
-	--commission-rate="0.10" \
-	--commission-max-rate="0.20" \
-	--commission-max-change-rate="0.01" \
-	--min-self-delegation="1000000" \
-	--gas=2 \
-	--gas-prices="0.0002uaum" \
-	--from="<your-key-ring>"
-	```
+		```
+		mantrachaind tx staking create-validator \
+		--amount=1000000uatom \
+		--pubkey=$(mantrachaind tendermint show-validator) \
+		--moniker="<your-moniker>" \
+		--chain-id="mantrachain-1" \
+		--commission-rate="0.10" \
+		--commission-max-rate="0.20" \
+		--commission-max-change-rate="0.01" \
+		--min-self-delegation="1000000" \
+		--gas=2 \
+		--gas-prices="0.0002uaum" \
+		--from="<your-key-ring>"
+		```
 	
