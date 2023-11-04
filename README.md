@@ -10,7 +10,8 @@
 	- `sudo apt-get update`
 3. Create a `/bin` in $HOME directory
 	- `mkdir bin`
-	- `source .profile` - to make sure the new `/bin` folder is added to `$PATH`.
+ 	- `echo "export PATH=\$PATH:/home/mantra/bin" >> ~/.bashrc` 
+	- `source ~/.bashrc` - to make sure the new `/bin` folder is added to `$PATH`.
 	- `cd bin`
 4.  Get the MANTRA Chain Binary from MANTRA GitHub repo
 	- `wget https://github.com/MANTRA-Finance/public/raw/main/mantrachain-testnet/mantrachaind-linux-amd64.zip`
@@ -88,11 +89,41 @@
 
 		sentry-node-03 - a435339f38ce3f973739a08afc3c3c7feb862dc5@35.192.223.187:26656
 		```
-9. Start and connet to TESTNET
+9. Configure the systemd service and connect to TESTNET
 
-	- `mantrachaind start`
+   	- Create the service
+   	  ```
+   	  sudo <<EOF >> /etc/systemd/system/mantra.service
+   	  [Unit]
+	  Description=Mantra Node
+	  After=network.target
+	  StartLimitIntervalSec=60
+	  StartLimitBurst=3
+	
+	  [Service]
+	  User=mantra
+	  Type=simple
+	  Restart=always
+	  RestartSec=30
+	  ExecStart=/home/mantra/bin/mantrachaind start
 
+   	  [Install]
+   	  WantedBy=default.target
+   	  EOF
+	  ```
+   	- Enable the service then start it.
+   	  ```
+   	  sudo systemctl daemon-reload
+   	  sudo systemctl enable mantra.service
+	  sudo systemctl start mantra.service
+ 	  ```
+   	
 10. Allow Validator to sync with network
+    
+    	- Check the progress using
+          ```journalctl -u mantra -f```  or   
+          ```curl 127.0.0.1:26657/status | jq .result.sync_info.catching_up```
+    
 	-	Once sync'ed, send a minimum of 1 AUM to the address of the Validator (e.g. `mantra1vqlnhx8pmwmz2sswg7r4syuyegej9zunclaudd`)
 11. Create Validator
 	- Run the following command:
