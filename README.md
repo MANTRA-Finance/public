@@ -12,7 +12,10 @@
 	- `mkdir bin`
 	- `source .profile` - to make sure the new `/bin` folder is added to `$PATH`.
 	- `cd bin`
-4.  Get the MANTRA Chain Binary from MANTRA GitHub repo
+4.  Get the MANTRA Chain Binary from MANTRA GitHub repo.  
+
+	**NOTE:** The GitHub repo is currently restricted for TESTNET Phase 1. Please contact MANTRA via Discord to request access.
+
 	- `wget https://github.com/MANTRA-Finance/public/raw/main/mantrachain-testnet/mantrachaind-linux-amd64.zip`
 	- `sudo apt install unzip`
 	- `unzip mantrachaind-linux-amd64.zip`
@@ -43,10 +46,14 @@
 		```
 	- **KEEP THE MNEMONIC PHRASE IN A SAFE PLACE!**
 
-7. Replace `genesis` file.
+7. Replace `genesis` file.  
+
+	**NOTE:** The GitHub repo is currently restricted for TESTNET Phase 1. Please contact MANTRA via Discord to request access.
+
 	- `cd ~/.mantrachain/config` - change directory to `config`
 	- `rm -rf genesis.json` - delete the default `genesis` file
 	-  `wget https://github.com/MANTRA-Finance/public/raw/main/mantrachain-testnet/genesis.json` - get the MANTRA Chain Genesis file.
+
 8. Configure connection to TESTNET
 	- Edit `config.toml` file (using your favourite text editor)
 	- Add the `persistent_peers`.  
@@ -87,6 +94,8 @@
 		sentry-node-02 - c533d7ee2037ee6d382f773be04c5bbf27da7a29@34.70.189.2:26656
 
 		sentry-node-03 - a435339f38ce3f973739a08afc3c3c7feb862dc5@35.192.223.187:26656
+
+		seed-node-00 - 7157c4030e6f372807dedc8e9ae408c66882304f@34.172.80.207:26656
 		```
 9. Start and connet to TESTNET
 
