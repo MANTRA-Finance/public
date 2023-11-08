@@ -3,9 +3,19 @@
 ## Create VM
 
 1. Spin up a new Ubuntu 20.04 virtual machine.
-	- 200 GB disk
-	- 1-2 vCPU
-	- 128 GB RAM
+
+	**Minimum:**  
+
+		- CPU: 2vCPU (1 core)
+		- Memory: 4 GB
+		- Storage: 200 - 500 GB
+
+	**Recommended:**
+
+		- CPU: 4vCPU (2 cores)
+		- Memory: 8 - 16GB
+		- Storage: 500 - 1000 GB
+
 2. SSH into machine and update OS
 	- `sudo apt-get update`
 3. Create a `/bin` in $HOME directory
