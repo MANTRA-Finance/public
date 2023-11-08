@@ -22,9 +22,9 @@
 5. Install CosmWasm Library
 	- `sudo wget -P /usr/lib https://github.com/CosmWasm/wasmvm/releases/download/v1.3.0/libwasmvm.x86_64.so`
 5. Initialise `mantrachaind`
-	- `mantrachaind init <your-moniker> --chain-id mantrachain-1`
-		- where `<your-moniker>`is the moniker and can be any valid string name (e.g. `validator-mantrachain-test-01`),
-		- and `mantrachain-1` is the Chain ID and must be exactly as specified.
+	- `mantrachaind init <your-moniker> --chain-id mantrachain-testnet-1`
+		- where `<your-moniker>`is the moniker and can be any valid string name (e.g. `validator-01`),
+		- and `mantrachain-testnet-1` is the Chain ID and must be exactly as specified.
 6. Generate keys and add them to Validator
 	- `mantrachaind config keyring-backend file`
 	- `mantrachaind keys add validator-mchain-test-node-keys`
@@ -111,7 +111,7 @@
 		--amount=1000000uatom \
 		--pubkey=$(mantrachaind tendermint show-validator) \
 		--moniker="<your-moniker>" \
-		--chain-id="mantrachain-1" \
+		--chain-id="mantrachain-testnet-1" \
 		--commission-rate="0.10" \
 		--commission-max-rate="0.20" \
 		--commission-max-change-rate="0.01" \
