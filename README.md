@@ -1,3 +1,3 @@
 # Setup MANTRA Chain Validator
 
-See [MANTRA Chain documentation](https://app.gitbook.com/o/DNGfbUwRpPqacbV6yIyc/s/HWR3GTzM6hfL5VomqMpE/) 
+See [MANTRA Chain documentation](https://docs.mantrachain.io/) 
