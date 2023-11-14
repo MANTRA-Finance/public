@@ -37,7 +37,7 @@ Every Discord account has a unique Discord ID. To get your Discord ID:
 
 Replace `DISCORD_USER_ID` in `$HOME/half-life/config.yaml` with your own Discord ID (leave the brackets).
 
-## Discord Webhook Configuration (Only for owner Discord server) 
+## Discord Webhook Configuration (Ask to Discord server owner) 
 
 ```markdown
 sed -i "s/DISCORD_WEBHOOK_ID/xxxx/" $HOME/half-life/config.yaml
